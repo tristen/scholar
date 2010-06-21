@@ -1,0 +1,437 @@
+/*
+	Stylesheet Structure:
+  - TYPOGRAPHY / BASE HTML
+	  - Resets
+	  - Links
+    - Titles
+    - Paragraphs
+    - Tables
+    - Lists
+    - Forms
+	- PAGE COMPONENTS
+	  - Sidebar Menus
+	  - Breadcrumb
+	  - Search form
+	  - Blue bar
+	- NODE
+	  - General
+	  - Teaser
+	  - Comments
+	- HEADER
+		- Menu
+		- Blocks
+	- FOOTER
+		- Message
+		- Menu
+		
+	Pseudo Constants:
+	- Orange      : D77600 
+	- Grey Light  : 808383 
+	- Grey Med    : 666666
+	- Blue Med    : 4D75A8
+	- Blue Dark   : 002F64
+*/
+
+/* -----------------------------------------------------------------
+	TYPOGRAPHY
+--------------------------------------------------------------------*/
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  font: 1.2em/1.4em Helvetica,Arial,sans-serif;
+  color: #666666;
+}
+
+/* Links
+-------------------*/
+a {
+  font-weight: bold;
+}
+a:link, a:visited {
+  color: #4D75A8;
+  text-decoration: none;
+  outline: none;
+}
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+/* Special link styles (include here) */
+#footer a {text-decoration: underline;}
+#footer a:hover {text-decoration: none;}
+
+/* Titles
+-------------------*/
+h1, h2 {line-height:1.3em; font-family: Georgia,Times,serif;}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, blockquote a, .title a {font-weight: normal;text-decoration: none;}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, blockquote a:hover {color: #003366;}
+
+h1 {
+	font-size: 2em;
+	font-weight: 300;
+	color: #003366;
+	padding: 0 0 0.5em;
+	margin: 0;
+}
+
+h2 {font-size:1.8em;font-weight:300;margin-bottom:0.75em;}
+h3 {font-size:1.6em;margin-bottom:0.8em;}
+h4 {font-size:1.2em;margin-bottom:0.8em;}
+h5 {font-size:1.1em;font-weight:600;margin-bottom:0;}
+h6 {font-size:1em;font-weight:bold;}
+
+.block-title{
+  text-transform: uppercase;
+}
+
+/* Paragraph Styles
+-------------------*/
+p {margin:0 0 1em 0;}
+
+/* Table Styles
+-------------------*/
+table {
+	width: 99%;
+}
+tr.even td, tr.odd td {
+	padding: 10px 5px;
+}
+tr.odd {
+	background-color: #FFF;
+}
+tr.even {
+  background-color: #EFF2E3;
+}
+tr.even, tr.odd {
+  border-bottom:1px solid #D0D4BB;
+  padding:0.1em 0.6em;
+}
+
+/* List Styles
+-------------------*/
+ul, ol {
+  margin: 8px 0;
+  padding-left: 2em;
+}
+ul li{
+  margin:0.2em 0;
+}
+ul{
+  list-style-image:url(../images/bullet.gif);
+}
+
+ul ul       { list-style-type: circle; }
+ul ul ul    { list-style-type: square; }
+ul ul ul ul { list-style-type: circle; }
+ol          { list-style-type: decimal; }
+ol ol       { list-style-type: lower-alpha; }
+ol ol ol    { list-style-type: decimal; }
+
+/*disabling system list defaults*/
+.block ul,
+.block ul li,
+.item-list ul,
+.item-list ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Forms
+-------------------*/
+/*login block*/
+#user-login-form {text-align:left;}
+
+textarea {
+  border-color:#848484 #C1C1C1 #E1E1E1;
+  border-style:solid;
+  border-width:1px;
+}
+#edit-delete {
+  background: #FF6633;
+}
+.description,
+.tips {
+  color:#9BA59D;
+  font-size:11px;
+  line-height:14px;
+}
+.form-submit,
+a.button {
+  background: #808383;
+  color: #fff;
+  border: none;
+  text-transform: lowercase;
+  font-weight: bold;
+  padding: 6px 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.form-submit:hover,
+a.button:hover,
+a.button:active {
+  background: #071E15;
+}
+.form-submit {
+  margin: 12px 0;
+}
+input,
+textarea {
+  padding: 4px;
+  color: #666;
+}
+textarea {font: 13px/1.375em "Lucidia Sans","Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;}
+input, textarea, select {font-size:14px;}
+
+/* -----------------------------------------------------------------
+	PAGE COMPONENTS
+--------------------------------------------------------------------*/
+
+/* Sidebar menu
+-------------------*/
+.sidebar ul.menu li{
+  margin-bottom: 1px;
+}
+.sidebar ul.menu li a{
+  background: #808383;
+  color: #FFF;
+  display: block;
+  font-weight: normal;
+  padding: 4px 12px;
+  text-decoration: none;
+}
+.sidebar ul.menu li a:hover{
+  background: #D77600;
+}
+.sidebar ul.menu li.active-trail a,
+.sidebar ul.menu li.active-trail a:hover{
+  background: #6B6E6E;
+  font-weight: bold;
+}
+.sidebar ul.menu li ul li a{
+  background: #A2A5A4;
+}
+.sidebar ul.menu li.active-trail ul li a.active,
+.sidebar ul.menu li.active-trail ul li a.active:hover{
+  background: #A2A5A4;
+}
+/*Give some space between blocks*/
+.sidebar .block{
+  margin-bottom: 25px;
+}
+#content-inner {
+  padding: 20px;
+}
+
+/* Breadcrumb
+-------------------*/
+.breadcrumb{
+  border-bottom: 1px solid #EAEAEA;
+  color: #4D75A8;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.breadcrumb a{
+  font-weight: normal;
+  text-decoration: none;
+}
+
+/* Search form
+-------------------*/
+#header-region form#search-block-form input[type="text"] {
+  width: 180px;
+}
+#search-block-form input.form-submit,
+#search-form input.form-submit {
+  background: transparent url(../images/sprite_base.png) no-repeat 0 -106px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  text-indent: -9999px;
+  position: absolute;
+}
+#search-block-form input.form-submit {top: -6px;right: -15px;}
+#search-form input.form-submit {top: 5px;right: -25px;}
+input#edit-search-block-form-1 {padding-right: 30px;}
+#search-form input {padding-right: 31px;width: 505px;}
+
+.container-inline {
+  position: relative;
+}
+
+/* Blue bar
+-------------------*/
+#blue-bar{
+  background: #002F64;
+  color: #FFFFFF;
+  display: block;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 7px 0;
+  text-transform: uppercase;
+  line-height: 24px;
+}
+#blue-bar a{
+  color: #FFF;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 24px;
+}
+#blue-bar #blue-title{
+  padding-left: 20px;
+}
+
+/* -----------------------------------------------------------------
+	NODE PAGES
+--------------------------------------------------------------------*/
+.node-teaser{
+  border-bottom: 1px solid #EAEAEA;
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+}
+.node .submitted {
+  background: #EFF2E3;
+  display: block;
+  margin: 0 0 10px;
+  padding: 8px 18px;
+}
+.node .submitted a {
+  color: #7B786A;
+}
+
+/*Add a button style around links*/
+.node ul.links li span a {
+  background: transparent url(../images/btn-left.gif) no-repeat left;
+  color: #666666;
+  padding: 14px 0 15px 14px;
+}
+.node ul.links li span {
+  background: transparent url(../images/btn-right.gif) no-repeat right;
+  padding: 14px 35px 15px 0px;
+}
+
+/* Comments
+-------------------*/
+/*Form*/
+#comments {
+  border-top: 1px solid #C7CED1;
+}
+#comment-form {
+  padding: 0 0 12px;
+}
+#comment-form .description {
+	font-style: italic;
+	margin-top: 5px;
+}
+#comment-form .description {
+  margin-left: 100px;
+}
+#comment-form div.collapsible div.fieldset-title a {
+  margin-left: 100px;
+}
+body.admin #comment-form #edit-submit,
+body.admin #comment-form .description {
+  margin-left: 0;
+}
+#comment-form .fieldset-outer {
+  margin-left: 100px;
+  margin-right: 37px;
+}
+/*Display*/
+#comments .indented {
+  background: transparent url(../images/comment_li_bg.gif) no-repeat 0 30px;
+  border-left: 1px solid #CED0D0;
+  padding-left: 25px;
+  margin-left: 0;
+}
+#comments .comment {
+  margin: 9px 0;
+}
+#comments .comment-inner {
+  border: 1px solid #CCC;
+  padding: 18px;
+}
+#comments .comment-inner h3.title {
+  width: 50%;
+}
+#comments .comment .submitted {
+  float: right;
+  width: 200px;
+}
+
+/* -----------------------------------------------------------------
+	HEADER
+--------------------------------------------------------------------*/
+
+/* Menu
+-------------------*/
+#primary{
+  float: right;
+  margin-top: 15px;
+}
+#primary li {
+  border-right: 1px solid #7C9ABF;
+  font-size: 0.9em;
+  line-height: 1em;
+  margin: 0 0 0 10px;
+  padding: 0 10px 0 0;
+}
+#primary li.last {
+  border-right: none;
+}
+
+/* Block
+-------------------*/
+#header-region {
+  float: right;
+  margin-top: -40px;
+}
+
+/*font normal weight to certain nav links: Contact, Maps*/
+li.menu-224 a,
+li.menu-322 a{ font-weight: normal;}
+
+
+/* -----------------------------------------------------------------
+	FOOTER
+--------------------------------------------------------------------*/
+#footer {
+  border-top: 1px solid #D0D4BB;
+  color: #111;
+}
+#footer-inner {
+  padding-top: 12px;
+}
+
+/* Message
+-------------------*/
+#footer-message {
+  font-size: 0.8em;
+  float: left;
+  margin: 10px 0;
+}
+
+/* Menu
+-------------------*/
+#secondary ul {
+  display: block;
+  list-style: none;
+}
+#secondary li {
+  border-left: 1px solid #7C9ABF;
+  float: left;
+  font-size: 0.9em;
+  line-height: 1em;
+  margin: 15px 10px 0 0;
+  padding: 0 0 0 10px;
+  list-style: none;
+}
+#secondary li.first {
+  border: none;
+  padding-left: 0;
+  margin-left: 0;
+}

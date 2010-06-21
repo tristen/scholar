@@ -1,0 +1,283 @@
+/*
+	Base Structure:
+  - FLOATS / CLEARS
+  - ROLLOVER EDIT LINKS
+  - FIELDSETS
+  - TABS
+  - MESSAGES
+  - PAGERS
+*/
+
+* { margin: 0; padding: 0; }
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix { display: inline-block; }
+
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE-mac */
+
+/* clear classes */
+.clearleft { clear: left; }
+.clearright { clear: right; }
+.clear { clear: both; }
+
+/* Float classes */
+.floatleft { float: left; margin: 0 10px 5px 0; }
+.floatright { float: right; margin: 0 0 5px 10px; }
+
+/* bug fix with views 2 edit links */
+div.view div.views-admin-links {
+	width: auto;
+}
+
+/** Rollover edit links for blocks */
+div.block {
+  position: relative;
+}
+div.block .edit {
+  display: none;
+  position: absolute;
+  right: -20px;
+  top: -5px;
+  z-index: 40;
+  padding: 3px 8px 0;
+  font-size: 10px;
+  line-height:16px;
+  background-color: #fff;
+  border:1px solid #ccc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-box-shadow: 0 1px 3px #888;
+  -webkit-box-shadow: -1px 1px 2px #666;
+}
+div.block .edit a {
+  display: block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+div.block:hover .edit {
+  display: block;
+}
+
+
+/*--------------------------------------------------------
+	FIELDSETS
+ ---------------------------------------------------------*/
+legend {margin-top: 6px;text-transform: uppercase;}
+legend a {color: #071E15 !important;}
+legend a:hover {text-decoration: none;}
+
+fieldset {
+  padding:0 10px 5px;
+  color:#4A4A4A;
+  border:none;
+}
+.fieldset-outer {
+  background:#F1F1F1;
+  border:1px solid #E1E1E1;
+  overflow:visible;
+  margin-bottom:10px;
+  margin-top:9px;
+  clear:both;
+}
+
+div.collapsed div.fieldset-title a {
+  background-position:-380px -360px !important;
+}
+div.collapsible div.fieldset-title a {
+  background:transparent url(../images/sprite_base.png) no-repeat scroll -380px -380px;
+  display:block;
+  padding-left:25px;
+  margin: 0 28px 12px 0;
+}
+
+/*--------------------------------------------------------
+	TABS
+ ---------------------------------------------------------*/
+.tabs {
+  background: #FFFFFF;
+  border-bottom: 1px solid #C7CED1;
+  margin: 14px 0;
+}
+ul.primary{
+  border: none;
+}
+ul.primary li a {
+  background: none;
+  border-right: 1px solid #BBB;
+  color: #9BA59D;
+  margin: 0;
+  padding: 6px 15px 6px 14px;
+}
+ul.primary li a:hover,
+ul.primary li.active a:hover {
+  background: none;
+  color: #666;
+}
+ul.primary li.active a {
+  background: none;
+  border-right: 1px solid #BBB;
+  color: #071E15;
+  padding-bottom: 5px;
+}
+ul.primary {
+  padding: 1px 0;
+}
+#comments ul.links li, /*Links on the site*/
+ul.primary li span a {
+  padding: 6px 15px 6px 0;
+}
+ul.links li a:hover {
+  text-decoration: none;
+}
+ul.primary li.active span a {
+  color: #333;
+}
+#comments ul.links li span, /*Links on the site*/
+ul.primary li span a span.tab {
+  border: 0;
+  padding: 6px 1px 8px 16px;
+}
+ul.secondary {
+  background: #666;
+  border-bottom: 0;
+  margin: 0;
+  padding: 0.6em;
+  border: none;
+}
+ul.secondary a {
+  color: #FFF;
+  font-weight: normal;
+  padding: 4px 15px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+ul.secondary li {
+  border-right: none;
+  padding: 0;
+}
+ul.secondary a.active {border: 0;}
+ul.secondary li.active a:hover,
+ul.secondary li.active a {background: #000;}
+ul.secondary li a:hover {background: #555;}
+
+/*--------------------------------------------------------
+	MESSAGES
+ ---------------------------------------------------------*/
+.password-description.error {
+  margin: 5px 0;
+  padding: 10px 0px 10px 20px;
+}
+.password-description {
+	font-size: 12px!important;
+	margin: 12px 0!important;
+}
+#messages {
+	width: 100%;
+}
+a.admin-message-close,
+span.close {
+	float:right;
+	width:25px;
+	height:25px;
+	overflow:hidden;
+	text-indent:-999px;
+	cursor:pointer;
+	background:url(../images/sprite_base.png) -105px 0px no-repeat;
+}
+.message-label {
+	display: none;
+}
+.message-content {
+	padding-left: 6px;
+	padding-top: 3px;
+}
+div.messages {
+	width: 97%;
+	margin:0 auto 5px;
+	padding: 6px;
+	font-weight: bold;
+	color:#036;
+	background:#bdf;
+	background-image: none;
+	background-repeat: no-repeat;
+	border: 2px solid #ace;
+	line-height: 21px;
+}
+form#block-admin-display-form .warning {
+	margin: 6px 0;
+	padding: 6px;
+}
+div.warning {
+	color: #840;
+	background: #FE6;
+	border-color: #ED5;
+}
+div.error {
+	color: #D52;
+	background: transparent;
+	border-color: #D52;
+}
+div.status {
+ background: #B9F764;
+ border-color: #78A13F;
+ color: #78A13F;
+}
+div.messages a,
+div.status a,
+div.warning a,
+div.error a {
+	color: #222;
+	font-weight: bold;
+}
+div.messages a:hover,
+div.status a:hover,
+div.warning a:hover,
+div.error a:hover {
+	color: #111;
+}
+div.messages ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+span.form-required {
+	color:orange;
+	cursor:help;
+}
+
+/* -----------------------------------------------------------------
+	PAGERS
+--------------------------------------------------------------------*/
+ul.pager,
+ul.pager li {list-style: none;}
+
+.item-list ul.pager {
+  margin: 12px auto 0;
+  padding: 4px;
+}
+ul.pager li.pager-item {
+  margin: 0;
+  padding: 0;
+}
+ul.pager li.pager-item,
+ul.pager a {
+  color: #003366;
+}
+#page ul.pager li {
+  padding: 0;
+  margin: 0;
+}
+ul.pager li.pager-item a {
+  background: #E6F3FD;
+  border: 1px solid #CCE8FE;
+  padding: 6px 12px;
+}

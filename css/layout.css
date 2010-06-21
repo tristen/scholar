@@ -1,0 +1,122 @@
+/*
+	Layout Structure:
+    - Sticky Footer 100% Height
+    - Header
+    - Content
+    - Sidebar Left
+    - Sideabr Right
+*/
+
+/* Sticky Footer 100% Height
+-------------------*/
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+#page {
+  width: 984px;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -126px;
+}
+#footer,
+.push {
+  height: 125px;
+  width: 984px;
+  margin: 0 auto;
+}
+
+/* Header
+-------------------*/
+#header {
+  height: 105px;
+  padding-top: 20px;
+}
+/*Keeps a narrow column for readability*/
+/*.column {
+  width: 544px;
+}*/
+
+#content {
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  padding: 0;
+}
+.sidebar {
+  float: left;
+}
+#sidebar-second {
+  float: right;
+}
+#footer {
+  float: none;
+  clear: both;
+}
+
+/* Layout Helpers */
+#header, #footer, .mission, .breadcrumb, .node {
+  clear: both;
+}
+
+/* Sidebars
+-------------------
+*  Changing the width of the sidebars is dead easy, just change the
+*  values below corresponding to the sidebar you want to modify.
+*  Make sure you keep negative values as negative values.
+*  For example, if I want to increase the width of the left sidebar
+*  to 300px, I would have to change each '190' to '300'.
+*/
+
+.two-sidebars .center,
+.sidebar-left .center {
+  margin-left: 200px;     /* LEFT value */
+}
+#sidebar-first {
+  width: 200px;           /* LEFT value */
+	margin-right: -200px;    /* negative LEFT value */
+}
+.two-sidebars .center,
+.sidebar-right .center {
+  margin-right: 200px;    /* RIGHT value */
+}
+#sidebar-second {
+  width: 200px;           /* RIGHT value */
+}
+
+/** Columns inner
+---------------------------------
+*  You can change the padding inside the columns without changing the
+*  width of them by just usinbg the INNER div of each column
+*/
+
+.inner {
+	padding: 0px;
+}
+
+/* Navigation
+-------------------
+*  The blue-bar is loaded after the content, so we need to make space
+*  for it, equal to its height, so if you change the height of the blue-bar,
+*  remember to adapt the margin top of the content and sidebars.
+*/
+
+#navigation {
+  float: left;
+  margin-left: 0;
+  margin-right: -100%;
+  padding: 0;
+  width: 100%;
+}
+/*Provides space between the bottom of the footer and the top blue bar*/
+#content,
+.sidebar {
+  margin-top: 50px;
+  margin-bottom: 12px;
+}
+#navigation {
+  height: 50px;
+}
